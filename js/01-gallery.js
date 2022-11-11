@@ -55,6 +55,7 @@ const clickImege = event => {
 	if (event.target.nodeName !== 'IMG') {
 		return;
 	} else {
+		event.preventDefault();
 		const instance = basicLightbox.create(`
 		    <img src="${event.target.getAttribute(
 					'data-source',
@@ -62,6 +63,13 @@ const clickImege = event => {
 		`);
 
 		instance.show();
+		const closeModal = event => {
+			if (event.key === 'Escape') {
+				instance.close();
+			}
+		};
+
+		document.addEventListener('keydown', closeModal);
 	}
 };
 
