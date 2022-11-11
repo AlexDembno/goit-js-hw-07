@@ -49,13 +49,19 @@ const markup = galleryItems
 
 divEl.insertAdjacentHTML('afterbegin', markup);
 
-const galleryLink = document.querySelector('.gallery__image');
+const galleryImg = document.querySelectorAll('.gallery__image');
 
 const clickImege = event => {
 	if (event.target.nodeName !== 'IMG') {
-		console.log(true);
+		return;
 	} else {
-		console.log(galleryLink[data - source]);
+		const instance = basicLightbox.create(`
+		    <img src="${event.target.getAttribute(
+					'data-source',
+				)}" width="800" height="600">
+		`);
+
+		instance.show();
 	}
 };
 
