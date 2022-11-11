@@ -28,7 +28,6 @@ import { galleryItems } from './gallery-items.js';
 //     Обрати внимание на то, что изображение обернуто в ссылку, а значит при клике по умолчанию
 // пользователь будет перенаправлен на другую страницу.Запрети это поведение по умолчанию.
 
-console.log(galleryItems);
 const divEl = document.querySelector('.gallery');
 
 const markup = galleryItems
@@ -40,7 +39,7 @@ const markup = galleryItems
       class="gallery__image"
       src="${objekt.preview}"
       data-source="${objekt.original}"
-      alt="Image description"
+      alt="${objekt.description}"
     />
   </a>
 </div>`,
